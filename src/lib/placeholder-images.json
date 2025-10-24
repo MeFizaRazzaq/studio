@@ -1,3 +1,82 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-1",
+      "description": "A stylish man adjusting his leather belt, focusing on the buckle.",
+      "imageUrl": "https://images.unsplash.com/photo-1664286022075-8e997e95bd17?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsZWF0aGVyJTIwYmVsdHxlbnwwfHx8fDE3NjEyMzkwNzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "leather belt"
+    },
+    {
+      "id": "craft-1",
+      "description": "Artisan's hands working on a piece of leather with traditional tools.",
+      "imageUrl": "https://images.unsplash.com/photo-1497031937139-3a0aad6859e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bGVhdGhlciUyMGNyYWZ0fGVufDB8fHx8MTc2MTI4MDQzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "leather craft"
+    },
+    {
+      "id": "product-wallet-1",
+      "description": "A classic bifold leather wallet in dark brown.",
+      "imageUrl": "https://images.unsplash.com/photo-1582126486298-9d5194a50d82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsZWF0aGVyJTIwd2FsbGV0fGVufDB8fHx8MTc2MTE2NTI4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "leather wallet"
+    },
+    {
+      "id": "product-wallet-2",
+      "description": "A minimalist black leather cardholder.",
+      "imageUrl": "https://images.unsplash.com/photo-1627685965893-a2420e23d1e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsZWF0aGVyJTIwY2FyZGhvbGRlcnxlbnwwfHx8fDE3NjEyODA0Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "leather cardholder"
+    },
+    {
+      "id": "product-belt-1",
+      "description": "A formal black leather belt with a silver buckle.",
+      "imageUrl": "https://images.unsplash.com/photo-1664286074176-5206ee5dc878?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsZWF0aGVyJTIwYmVsdHxlbnwwfHx8fDE3NjEyMzkwNzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "leather belt"
+    },
+    {
+      "id": "product-belt-2",
+      "description": "A casual tan leather belt with a brass buckle.",
+      "imageUrl": "https://images.unsplash.com/photo-1609676873568-6b5a0b95bd91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0YW4lMjBiZWx0fGVufDB8fHx8MTc2MTI4MDQzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tan belt"
+    },
+    {
+      "id": "product-keychain-1",
+      "description": "A simple and elegant leather keychain.",
+      "imageUrl": "https://images.unsplash.com/photo-1619892203894-b8c313da1af2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxsZWF0aGVyJTIwa2V5Y2hhaW58ZW58MHx8fHwxNzYxMjgwNDM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "leather keychain"
+    },
+    {
+      "id": "product-accessory-1",
+      "description": "A leather valet tray for organizing everyday essentials.",
+      "imageUrl": "https://images.unsplash.com/photo-1711288513179-4f7b052fee14?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx2YWxldCUyMHRyYXl8ZW58MHx8fHwxNzYxMjgwNDM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "valet tray"
+    },
+    {
+      "id": "about-us",
+      "description": "Portrait of the founder in a workshop.",
+      "imageUrl": "https://images.unsplash.com/photo-1609224871627-4f69e57d9380?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjcmFmdHNtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjEyNDQyNDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "craftsman portrait"
+    },
+    {
+      "id": "contact-us",
+      "description": "A vintage telephone on a wooden desk.",
+      "imageUrl": "https://images.unsplash.com/photo-1520923642038-b4259acecbd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx2aW50YWdlJTIwdGVsZXBob25lfGVufDB8fHx8MTc2MTI1OTg0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "vintage telephone"
+    },
+    {
+      "id": "product-belt-3",
+      "description": "Woven brown leather belt.",
+      "imageUrl": "https://images.unsplash.com/photo-1759395162954-f2191918e647?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b3ZlbiUyMGJlbHR8ZW58MHx8fHwxNzYxMjgwNDM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woven belt"
+    },
+    {
+      "id": "product-wallet-3",
+      "description": "A long leather travel wallet.",
+      "imageUrl": "https://images.unsplash.com/photo-1651051467681-3f8faaf3bb34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0cmF2ZWwlMjB3YWxsZXR8ZW58MHx8fHwxNzYxMjgwNDM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "travel wallet"
+    },
+    {
+      "id": "admin-bg",
+      "description": "Abstract geometric pattern in dark tones",
+      "imageUrl": "https://images.unsplash.com/photo-1640906152676-dace6710d24b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkYXJrJTIwcGF0dGVybnxlbnwwfHx8fDE3NjEyODA0Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dark pattern"
+    }
+  ]
 }
