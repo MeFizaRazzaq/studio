@@ -22,14 +22,19 @@ export default {
         code: ['monospace'],
       },
       colors: {
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        backg: '#1B191A',
-        primaryaccent:'#B48A60',
-        primarytext:'#D4D4D4',
-        hovertxt: '#C89B6A',
-        divider:'#2A2A2A',
-        mutedtext:'#9F9F9F',
+  background: "hsl(var(--background))",
+  foreground: "hsl(var(--foreground))",
+  backg: "hsl(var(--background))",
+
+  primaryaccent: "hsl(var(--accent))",  // gold brand color
+  primarytext: "hsl(var(--foreground))",
+  hovertxt: "hsl(var(--primary))",
+
+  divider: "hsl(var(--border))",
+  mutedtext: "hsl(var(--muted-foreground))",
+
+  logotxt: "hsl(var(--primary))",
+
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',

@@ -79,29 +79,6 @@ const products: Product[] = [
     },
   },
   {
-    id: 'prod_004',
-    name: 'The Journeyman Belt',
-    slug: 'journeyman-tan-belt',
-    description:
-      'A versatile and rugged tan leather belt perfect for casual wear. The solid brass buckle develops a unique patina over time, telling the story of your journeys.',
-    price: 109.99,
-    images: [
-        {
-            id: 'product-belt-2',
-            url: PlaceHolderImages.find(p => p.id === 'product-belt-2')?.imageUrl || '',
-            alt: 'Casual tan leather belt with brass buckle',
-            hint: 'tan belt'
-        }
-    ],
-    stock: 40,
-    category: categories[1],
-    seo: {
-      title: 'The Journeyman - Casual Tan Leather Belt | Meem Artisan',
-      description: 'Our Journeyman belt in tan leather is the perfect companion for your everyday adventures. Durable, stylish, and built to last.',
-      keywords: 'casual belt, tan leather belt, men\'s belt, brass buckle',
-    },
-  },
-  {
     id: 'prod_005',
     name: 'The Legacy Keychain',
     slug: 'legacy-leather-keychain',

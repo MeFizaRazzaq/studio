@@ -28,19 +28,20 @@ export default function AboutPage() {
               </div>
             )}
             <div className="prose prose-invert prose-lg max-w-none text-foreground/80">
-              <p>
-                Haus of Meem was born from a passion for preserving the rich heritage of Pakistani leatherwork while infusing it with a modern, minimalist aesthetic. Founded by [Founder's Name], a third-generation leather artisan, our brand is a tribute to the meticulous skill passed down through his family.
-              </p>
-              <p>
-                We believe that true luxury lies in the details: the quality of the raw materials, the precision of the stitching, and the timelessness of the design. Each of our products is more than just an accessory; it is a piece of art, a companion for life's journey, crafted to age beautifully and tell its own story.
-              </p>
-              <p>
-                Our workshop, nestled in the heart of [City, Pakistan], is where tradition meets innovation. We work with local tanneries to source the finest full-grain leather, ensuring that every hide meets our exacting standards of quality and ethical sourcing.
-              </p>
-              <p>
-                Welcome to the Haus of Meem. We invite you to experience craftsmanship that endures.
-              </p>
-            </div>
+  <p>
+    Haus of Meem was created by a duo with a shared passion — one, a software engineer with a love for design and creativity, and the other, a marketing mind with an eye for trends and craftsmanship. Together, we set out to elevate Pakistan’s exceptional leather tradition into a premium, globally recognized brand.
+  </p>
+  <p>
+    Every product we craft reflects our belief that luxury is simple — it’s in the feel of real, full-grain leather, in the finesse of clean stitching, and in designs that stay timeless no matter the trend. Our pieces are made to be used, lived with, and cherished as they develop a unique character over time.
+  </p>
+  <p>
+    Based in Pakistan, the home of some of the world’s finest leather, we work closely with skilled local artisans and trusted tanneries to ensure quality, ethical sourcing, and a product experience that feels truly special from the very first touch.
+  </p>
+  <p>
+    Welcome to the Haus of Meem — where heritage meets modern elegance. We create for those who value craftsmanship that lasts a lifetime.
+  </p>
+</div>
+
           </div>
         </div>
       </div>

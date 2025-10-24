@@ -14,42 +14,42 @@ const navLinks = [
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center">
-        <div className="mr-4 hidden md:flex">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
+      <div className="container flex h-16 items-center justify-between">
+        
+        {/* Left: Nav Links */}
+        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="transition-colors hover:text-foreground/80 text-foreground/60"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Center: Logo */}
+        <div className="absolute left-1/2 -translate-x-1/2">
+          <Link href="/" className="flex items-center space-x-2">
             <Logo />
           </Link>
-          <nav className="flex items-center space-x-6 text-sm font-medium">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="transition-colors hover:text-foreground/80 text-foreground/60"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-        
-        {/* Mobile Nav - can be implemented with a Sheet */}
-        <div className="md:hidden">
-            <Link href="/">
-                <Logo />
-            </Link>
         </div>
 
-        <div className="flex flex-1 items-center justify-end space-x-2">
+        {/* Right: Icons */}
+        <div className="flex items-center space-x-2 ml-auto">
           <Button variant="ghost" size="icon">
             <Search className="h-5 w-5" />
             <span className="sr-only">Search</span>
           </Button>
+
           <Link href="/account">
             <Button variant="ghost" size="icon">
               <User className="h-5 w-5" />
               <span className="sr-only">Account</span>
             </Button>
           </Link>
+
           <CartSheet>
             <Button variant="ghost" size="icon">
               <ShoppingBag className="h-5 w-5" />

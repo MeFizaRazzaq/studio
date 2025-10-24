@@ -3,7 +3,7 @@
     {
       "id": "hero-1",
       "description": "A stylish man adjusting his leather belt, focusing on the buckle.",
-      "imageUrl": "https://images.unsplash.com/photo-1664286022075-8e997e95bd17?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsZWF0aGVyJTIwYmVsdHxlbnwwfHx8fDE3NjEyMzkwNzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/hero-section.png",
       "imageHint": "leather belt"
     },
     {

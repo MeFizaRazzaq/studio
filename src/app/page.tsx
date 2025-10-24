@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { ProductCard } from '@/components/product-card';
 import { getProducts } from '@/lib/placeholder-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { CollectionCard } from "@/components/collection-card";
 
 export default async function Home() {
   const products = await getProducts();
@@ -13,9 +14,9 @@ export default async function Home() {
   const craftsmanshipImage = PlaceHolderImages.find(p => p.id === 'craft-1');
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[80vh] w-full text-white">
+      <section className="relative h-[20vh] md:h-[35vh] w-full text-white ">
         {heroImage && (
             <Image
                 src={heroImage.imageUrl}
@@ -39,6 +40,51 @@ export default async function Home() {
           </Button>
         </div>
       </section>
+
+        {/*Collection */}
+        <section className="py-10 bg-background">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl md:text-4xl font-headline text-center text-primary mb-12">
+      Collections
+    </h2>
+
+    {/* ✅ 2-Column Stacked Layout */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-[340px]">
+
+  {/* A — Tall card, half width */}
+  <div className="md:row-span-2 h-[700px]">
+    <CollectionCard
+      title="Wallets"
+      slug="wallets"
+      image={{ url: "/wallet-pack.png", alt: "Wallets Collection" }}
+    />
+  </div>
+
+  {/* B */}
+  <div className="h-[335px]">
+    <CollectionCard
+      title="Belts"
+      slug="belts"
+      image={{ url: "/belt-pack.png", alt: "Belts Collection" }}
+    />
+  </div>
+
+  {/* C */}
+  <div className="h-[335px]">
+    <CollectionCard
+      title="Keychains"
+      slug="keychains"
+      image={{ url: "/keychain-pack.png", alt: "Keychains Collection" }}
+    />
+  </div>
+
+</div>
+
+
+  </div>
+</section>
+
+
 
       {/* Featured Products */}
       <section className="py-16 md:py-24 bg-background">
