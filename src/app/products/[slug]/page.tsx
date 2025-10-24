@@ -14,19 +14,26 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const [product, setProduct] = useState<Product | null>(null);
   const [quantity, setQuantity] = useState(1);
   const { addItem } = useCart();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchProduct() {
+      setLoading(true);
       const fetchedProduct = await getProductBySlug(params.slug);
       if (fetchedProduct) {
         setProduct(fetchedProduct);
       }
+      setLoading(false);
     }
     fetchProduct();
   }, [params.slug]);
 
-  if (!product) {
+  if (loading) {
     return <ProductPageSkeleton />;
+  }
+
+  if (!product) {
+    return <div>Product not found</div>;
   }
 
   const handleAddToCart = () => {
