@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Logo } from "./logo";
+import { FaInstagram, FaFacebookF, FaTiktok } from "react-icons/fa";
+
 
 export function SiteFooter() {
   const currentYear = new Date().getFullYear();
@@ -43,10 +45,12 @@ export function SiteFooter() {
             <p className="text-sm text-muted-foreground mb-4">
               Receive updates on new collections and exclusive offers.
             </p>
-            <form className="flex gap-2">
-              <Input type="email" placeholder="Your email" className="bg-background"/>
-              <Button type="submit">Subscribe</Button>
-            </form>
+            <div className="flex gap-8">
+                <FaFacebookF className="w-5 h-5 hover:text-[#C89B6A] cursor-pointer transition" />
+  <FaInstagram className="w-5 h-5 hover:text-[#C89B6A] cursor-pointer transition" />
+  <FaTiktok className="w-5 h-5 hover:text-[#C89B6A] cursor-pointer transition" />
+
+            </div>
           </div>
         </div>
 

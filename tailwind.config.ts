@@ -24,6 +24,12 @@ export default {
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        backg: '#1B191A',
+        primaryaccent:'#B48A60',
+        primarytext:'#D4D4D4',
+        hovertxt: '#C89B6A',
+        divider:'#2A2A2A',
+        mutedtext:'#9F9F9F',
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
