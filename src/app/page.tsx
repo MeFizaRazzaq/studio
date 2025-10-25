@@ -6,6 +6,7 @@ import { ProductCard } from '@/components/product-card';
 import { getProducts } from '@/lib/placeholder-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { CollectionCard } from "@/components/collection-card";
+import { TestimonialsSection } from '@/components/testimonial-section';
 
 export default async function Home() {
   const products = await getProducts();
@@ -41,53 +42,59 @@ export default async function Home() {
         </div>
       </section>
 
-        {/*Collection */}
-        <section className="py-10 bg-background">
+        {/* Collections — 3-Column Staggered Layout */}
+<section className="py-10 bg-background">
   <div className="container mx-auto px-4">
-    <h2 className="text-3xl md:text-4xl font-headline text-center text-primary mb-12">
+    <h2 className="text-3xl md:text-4xl font-headline text-center text-primary mb-14">
       Collections
     </h2>
 
-    {/* ✅ 2-Column Stacked Layout */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-[340px]">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-  {/* A — Tall card, half width */}
-  <div className="md:row-span-2 h-[700px]">
-    <CollectionCard
-      title="Wallets"
-      slug="wallets"
-      image={{ url: "/wallet-pack.png", alt: "Wallets Collection" }}
-    />
-  </div>
+      {/* Column 1 — Full Height */}
+      <div className="md:row-span-2">
+        <CollectionCard
+          title="Wallets"
+          slug="wallets"
+          image={{ url: "/wallet-pack.png", alt: "Wallets Collection" }}
+        />
+      </div>
 
-  {/* B */}
-  <div className="h-[335px]">
-    <CollectionCard
-      title="Belts"
-      slug="belts"
-      image={{ url: "/belt-pack.png", alt: "Belts Collection" }}
-    />
-  </div>
+      {/* Column 2 — Two Stacked Cards */}
+      <div>
+        <CollectionCard
+          title="Belts"
+          slug="belts"
+          image={{ url: "/belt-pack.png", alt: "Belts Collection" }}
+        />
+      </div>
+      <div className="md:row-span-2">
+        <CollectionCard
+          title="Gift Sets"
+          slug="gifts"
+          image={{ url: "/wallet-pack.png", alt: "Gift Sets Collection" }}
+        />
+      </div>
 
-  {/* C */}
-  <div className="h-[335px]">
-    <CollectionCard
-      title="Keychains"
-      slug="keychains"
-      image={{ url: "/keychain-pack.png", alt: "Keychains Collection" }}
-    />
-  </div>
+      {/* Column 3 — Full Height */}
+      <div >
+        <CollectionCard
+          title="Keychains"
+          slug="keychains"
+          image={{ url: "/keychain-pack.png", alt: "Keychains Collection" }}
+        />
+      </div>
 
-</div>
-
-
+    </div>
   </div>
 </section>
 
 
 
+
+
       {/* Featured Products */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-10 md:py-10 bg-card">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-headline text-center text-primary mb-12">
             Featured Products
@@ -105,40 +112,64 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Craftsmanship Section */}
-      <section className="py-16 md:py-24 bg-card">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
-              <h2 className="text-3xl md:text-4xl font-headline text-primary mb-6">
-                The Art of Leather
-              </h2>
-              <p className="mb-4 text-foreground/80">
-                At Haus of Meem, we honor the legacy of Pakistani craftsmanship. Each piece is meticulously handcrafted from the finest full-grain leather, sourced from local tanneries.
-              </p>
-              <p className="mb-8 text-foreground/80">
-                Our artisans blend age-old techniques with modern precision to create products that are not just accessories, but statements of enduring quality and style.
-              </p>
-              <Button asChild>
-                <Link href="/craftsmanship">Discover Our Process</Link>
-              </Button>
-            </div>
-            <div className="order-1 md:order-2">
-                {craftsmanshipImage && (
-                    <Image
-                        src={craftsmanshipImage.imageUrl}
-                        alt={craftsmanshipImage.description}
-                        width={600}
-                        height={400}
-                        className="rounded-lg shadow-lg w-full h-auto object-cover"
-                        data-ai-hint={craftsmanshipImage.imageHint}
-                    />
-                )}
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
+<section className="py-10 md:py-10 bg-background">
+  <TestimonialsSection />
+
+</section>
+
+{/* Craftsmanship Section (Staggered Layout) */}
+<section className="py-10 md:py-10 bg-card">
+  <div className="container mx-auto px-4">
+    <div className="grid md:grid-cols-2 gap-60 items-center">      
+      {/*left Text*/}
+      <div className="flex flex-col justify-center space-y-6">
+        <h2 className="text-3xl md:text-4xl font-headline text-primary">
+          The Art of Leather
+        </h2>
+        <p className="text-foreground/80">
+          At Haus of Meem, we honor the legacy of Pakistani craftsmanship. Each piece is meticulously handcrafted from the finest full-grain leather, sourced from local tanneries.
+        </p>
+        <p className="text-foreground/80">
+          Our artisans blend age-old techniques with modern precision to create products that are not just accessories, but statements of enduring quality and style.
+        </p>
+        <Button asChild size="sm" className="w-auto px-6 self-start">
+  <Link href="/craftsmanship">Discover Our Process</Link>
+</Button>
+
+      </div>
+      {/*right images*/}
+      <div className="relative w-full h-[400px] md:h-[500px] flex items-center justify-center">
+        <div className="absolute top-0 left-0 w-2/3 h-2/3 rounded-lg overflow-hidden shadow-lg">
+          <Image
+            src="/dots.png" // replace with craftsmanshipImage or static
+            alt="Leather Craftsmanship"
+            fill
+            className="object-fil"
+          />
+        </div>
+        <div className="absolute top-1/9 left-2/5 w-2/3 h-2/3 rounded-lg overflow-hidden shadow-lg bg-blue-100">
+          <Image
+            src="/art2.png"
+            alt="Detail"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="absolute top- left-1/2 bottom-0 right-0 w-2/2 h-2/4 rounded-lg overflow-hidden shadow-lg bg-beige-100">
+          <Image
+            src="/art1.png"
+            alt="Tools"
+            fill
+            className="object-cover"
+          />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
       {/* Newsletter */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 text-center max-w-2xl">

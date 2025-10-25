@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import type { Product } from '@/lib/types';
-import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import useCart from '@/hooks/use-cart';
 
@@ -17,27 +16,27 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <motion.div
-      className="group relative rounded-xl overflow-hidden bg-transparent cursor-pointer"
+      className="group relative rounded-xl overflow-hidden bg-transparent cursor-pointer w-[300px] h-[450px]"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
       viewport={{ once: true }}
     >
       <Link href={`/products/${product.slug}`}>
-        <div className="overflow-hidden rounded-xl relative">
+        <div className="overflow-hidden rounded-xl relative w-full h-full">
 
           {/* Product Image */}
           <motion.div
-            className="w-full h-auto"
+            className="w-full h-full"
             whileHover={{ scale: 1.06 }}
             transition={{ duration: 0.6 }}
           >
             <Image
               src={product.images[0].url}
               alt={product.images[0].alt}
-              width={600}
-              height={700}
-              className="object-cover w-full h-auto rounded-xl
+              width={300}
+              height={450}
+              className="object-cover w-full h-full rounded-xl
                          group-hover:blur-[3px] group-hover:brightness-75
                          transition-all duration-500"
             />
