@@ -16,12 +16,12 @@ export default function AboutPage() {
           <h1 className="text-4xl md:text-5xl font-headline text-center text-primary mb-12">Our Story</h1>
           <div className="grid md:grid-cols-1 gap-12 items-center">
             {aboutImage && (
-              <div className="w-full">
+              <div >
                 <Image
                   src={aboutImage.imageUrl}
                   alt={aboutImage.description}
-                  width={800}
-                  height={600}
+                  width={500}
+                  height={500}
                   className="rounded-lg shadow-lg mx-auto"
                   data-ai-hint={aboutImage.imageHint}
                 />

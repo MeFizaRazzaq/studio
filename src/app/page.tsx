@@ -7,10 +7,11 @@ import { getProducts } from '@/lib/placeholder-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { CollectionCard } from "@/components/collection-card";
 import { TestimonialsSection } from '@/components/testimonial-section';
+import { FeaturedProducts } from '@/components/feature-products';
 
 export default async function Home() {
   const products = await getProducts();
-  const featuredProducts = products.slice(0, 3);
+  const featuredProducts = products.slice(0, 5);
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-1');
   const craftsmanshipImage = PlaceHolderImages.find(p => p.id === 'craft-1');
 
@@ -94,23 +95,10 @@ export default async function Home() {
 
 
       {/* Featured Products */}
-      <section className="py-10 md:py-10 bg-card">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-headline text-center text-primary mb-12">
-            Featured Products
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Button asChild variant="outline">
-              <Link href="/shop">View All Products</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+<section className="py-10 md:py-10 bg-card">
+  <FeaturedProducts products={featuredProducts}/>
+</section>
+
 
       
 
