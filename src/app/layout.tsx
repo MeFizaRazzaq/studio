@@ -1,13 +1,14 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import { cn } from '@/lib/utils';
-import { Toaster } from '@/components/ui/toaster';
-import { SiteHeader } from '@/components/site-header';
-import { SiteFooter } from '@/components/site-footer';
+import type { Metadata } from "next";
+import "./globals.css";
+import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/toaster";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { AuthProvider } from "@/context/AuthContext"; // ✅ add this line
 
 export const metadata: Metadata = {
-  title: 'Meem Artisan',
-  description: 'Haus of Meem — Crafted for the Modern Gentleman.',
+  title: "Meem Artisan",
+  description: "Haus of Meem — Crafted for the Modern Gentleman.",
 };
 
 export default function RootLayout({
@@ -16,28 +17,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-  lang="en"
-  className="dark js-focus-visible"
-  data-js-focus-visible=""
->
-
+    <html lang="en" className="dark js-focus-visible" data-js-focus-visible="">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=PT+Sans:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body
-        className={cn(
-          "min-h-screen bg-background font-body antialiased",
-        )}
-      >
-        <div className="relative flex min-h-screen flex-col">
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-        </div>
-        <Toaster />
+      <body className={cn("min-h-screen bg-background font-body antialiased")}>
+        <AuthProvider>
+          <div className="relative flex min-h-screen flex-col">
+            <SiteHeader />
+            <main className="flex-1">{children}</main>
+            <SiteFooter />
+          </div>
+          <Toaster />
+        </AuthProvider>
       </body>
     </html>
   );

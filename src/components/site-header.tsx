@@ -1,8 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Search, User, ShoppingBag } from "lucide-react";
 import { CartSheet } from "./cart-sheet";
 import { Logo } from "./logo";
+import { useAuth } from "@/context/AuthContext";
+import { AuthModal } from "./auth-modal";
+import { signOut } from "firebase/auth";
+import { auth } from "@/firebase/initFirebase";
+import { useState } from "react";
 
 const navLinks = [
   { href: "/shop", label: "Shop" },
@@ -12,6 +19,17 @@ const navLinks = [
 ];
 
 export function SiteHeader() {
+  const { user } = useAuth();
+  const [showAuthModal, setShowAuthModal] = useState(false);
+
+  const handleProfileClick = async () => {
+    if (!user) {
+      setShowAuthModal(true);
+    } else {
+      await signOut(auth);
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
@@ -43,13 +61,13 @@ export function SiteHeader() {
             <span className="sr-only">Search</span>
           </Button>
 
-          <Link href="/account">
-            <Button variant="ghost" size="icon">
-              <User className="h-5 w-5" />
-              <span className="sr-only">Account</span>
-            </Button>
-          </Link>
+          {/* 🔥 Profile Icon */}
+          <Button variant="ghost" size="icon" onClick={handleProfileClick}>
+            <User className="h-5 w-5" />
+            <span className="sr-only">Account</span>
+          </Button>
 
+          {/* 🛒 Cart */}
           <CartSheet>
             <Button variant="ghost" size="icon">
               <ShoppingBag className="h-5 w-5" />
@@ -58,6 +76,11 @@ export function SiteHeader() {
           </CartSheet>
         </div>
       </div>
+
+      {/* Auth Modal */}
+      {showAuthModal && (
+        <AuthModal onClose={() => setShowAuthModal(false)} />
+      )}
     </header>
   );
 }
