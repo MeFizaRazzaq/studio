@@ -8,12 +8,15 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { CollectionCard } from "@/components/collection-card";
 import { TestimonialsSection } from '@/components/testimonial-section';
 import { FeaturedProducts } from '@/components/feature-products';
+import { testConnection } from "@/firebase/testFirebase";
 
 export default async function Home() {
   const products = await getProducts();
   const featuredProducts = products.slice(0, 5);
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-1');
   const craftsmanshipImage = PlaceHolderImages.find(p => p.id === 'craft-1');
+
+  
 
   return (
     <div className="flex flex-col w-full">
