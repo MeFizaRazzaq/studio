@@ -12,7 +12,7 @@ interface FeaturedProductsProps {
 
 export function FeaturedProducts({ products }: FeaturedProductsProps) {
   if (!products || products.length === 0) return null;
-
+const marqueeProducts = products.length > 1 ? [...products, ...products] : products;
   return (
     <section className="py-10 md:py-10 bg-card">
       <div className="container mx-auto px-4">
@@ -22,6 +22,7 @@ export function FeaturedProducts({ products }: FeaturedProductsProps) {
 
         {/* Marquee container */}
         <div className="overflow-hidden relative">
+          
           <motion.div
             className="flex space-x-4"
             animate={{ x: ["0%", "-50%"] }}
@@ -35,7 +36,7 @@ export function FeaturedProducts({ products }: FeaturedProductsProps) {
             }}
           >
             {/* Duplicate items for seamless loop */}
-            {[...products, ...products].map((product, index) => (
+            {marqueeProducts.map((product, index) => (
               <div key={index} className="flex-shrink-0">
                 <ProductCard product={product} />
               </div>

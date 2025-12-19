@@ -7,7 +7,10 @@ import { SiteFooter } from "@/components/site-footer";
 import { AuthProvider } from "@/context/AuthContext"; // ✅ add this line
 
 export const metadata: Metadata = {
-  title: "Meem Artisan",
+  title: {
+    default: "Haus of Meem",
+    template: "Meem | %s",
+  },
   description: "Haus of Meem — Crafted for the Modern Gentleman.",
 };
 

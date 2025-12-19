@@ -4,21 +4,29 @@ export type Category = {
   slug: string;
 };
 
-export type Product = {
+// src/lib/types.ts
+export interface Product {
   id: string;
   name: string;
   slug: string;
   description: string;
   price: number;
-  images: { id: string, url: string, alt: string, hint: string }[];
+  category: string;
   stock: number;
-  category: Category;
-  seo: {
-    title: string;
-    description: string;
-    keywords: string;
+  images: Array<{
+    url: string;
+    alt: string;
+    hint?: string;
+  }>;
+  featured?: boolean; // Add this field
+  seo?: {
+    title?: string;
+    description?: string;
+    keywords?: string;
   };
-};
+  createdAt?: string;
+  updatedAt?: string;
+}
 
 export type CartItem = {
   id: string;

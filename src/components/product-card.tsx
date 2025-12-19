@@ -58,7 +58,7 @@ export function ProductCard({ product }: ProductCardProps) {
           {product.name}
         </h3>
         <p className="text-primary text-base font-medium">
-          ${product.price.toFixed(2)}
+          Rs{product.price.toFixed(2)}
         </p>
       </div>
     </motion.div>

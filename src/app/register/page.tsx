@@ -10,7 +10,7 @@ import { registerUser } from "@/firebase/firebaseActions";
 
 export const metadata = {
   title: "Create Account | Meem Artisan",
-  description: "Join the Haus of Meem.",
+  description: "Join the Haus of Meem. A Men's Leather Goods E-commerce Platform. provig-ding best gifts for menm wallets to belts.",
 };
 
 export default function RegisterPage() {

@@ -15,7 +15,11 @@ import { toast } from "@/hooks/use-toast";
 const initialState = {
   success: false,
   message: "",
-  data: undefined,
+  data: {
+    title: "",
+    description: "",
+    keywords: "",
+  },
 };
 
 function SubmitButton() {
@@ -35,22 +39,24 @@ export function SeoForm({ product }: { product: Product }) {
 
   useEffect(() => {
     if (state.success && state.data) {
-        toast({
-            title: "Success",
-            description: state.message,
-        });
-        const form = formRef.current;
-        if(form) {
-            (form.elements.namedItem('seoTitle') as HTMLInputElement).value = state.data.title;
-            (form.elements.namedItem('seoDescription') as HTMLTextAreaElement).value = state.data.description;
-            (form.elements.namedItem('seoKeywords') as HTMLInputElement).value = state.data.keywords;
-        }
+      toast({
+        title: "Success",
+        description: state.message || "SEO metadata generated!",
+      });
+
+      const form = formRef.current;
+      if (form && state.data) {
+        (form.elements.namedItem("seoTitle") as HTMLInputElement).value = state.data.title;
+        (form.elements.namedItem("seoDescription") as HTMLTextAreaElement).value =
+          state.data.description;
+        (form.elements.namedItem("seoKeywords") as HTMLInputElement).value = state.data.keywords;
+      }
     } else if (!state.success && state.message) {
-        toast({
-            title: "Error",
-            description: state.message,
-            variant: "destructive",
-        });
+      toast({
+        title: "Error",
+        description: state.message,
+        variant: "destructive",
+      });
     }
   }, [state]);
 
@@ -71,17 +77,34 @@ export function SeoForm({ product }: { product: Product }) {
         <CardContent className="grid gap-6">
           <input type="hidden" name="entityName" value={product.name} />
           <input type="hidden" name="entityDescription" value={product.description} />
+
           <div className="grid gap-3">
             <Label htmlFor="seoTitle">SEO Title</Label>
-            <Input id="seoTitle" name="seoTitle" type="text" defaultValue={product.seo.title} />
+            <Input
+              id="seoTitle"
+              name="seoTitle"
+              type="text"
+              defaultValue={product.seo?.title || ""}
+            />
           </div>
+
           <div className="grid gap-3">
             <Label htmlFor="seoDescription">SEO Description</Label>
-            <Textarea id="seoDescription" name="seoDescription" defaultValue={product.seo.description} />
+            <Textarea
+              id="seoDescription"
+              name="seoDescription"
+              defaultValue={product.seo?.description || ""}
+            />
           </div>
+
           <div className="grid gap-3">
             <Label htmlFor="seoKeywords">SEO Keywords</Label>
-            <Input id="seoKeywords" name="seoKeywords" type="text" defaultValue={product.seo.keywords} />
+            <Input
+              id="seoKeywords"
+              name="seoKeywords"
+              type="text"
+              defaultValue={product.seo?.keywords || ""}
+            />
           </div>
         </CardContent>
       </Card>

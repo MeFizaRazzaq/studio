@@ -2,97 +2,117 @@
   "placeholderImages": [
     {
       "id": "hero-1",
-      "description": "A stylish man adjusting his leather belt, focusing on the buckle.",
+      "description": "A premium black leather belt with a polished buckle.",
       "imageUrl": "/hero-section.png",
       "imageHint": "leather belt"
     },
     {
-      "id": "craft-1",
-      "description": "Artisan's hands working on a piece of leather with traditional tools.",
-      "imageUrl": "https://images.unsplash.com/photo-1497031937139-3a0aad6859e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bGVhdGhlciUyMGNyYWZ0fGVufDB8fHx8MTc2MTI4MDQzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "leather craft"
-    },
-    {
-      "id": "product-wallet-1",
-      "description": "A classic bifold leather wallet in dark brown.",
-      "imageUrl": "https://images.unsplash.com/photo-1582126486298-9d5194a50d82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsZWF0aGVyJTIwd2FsbGV0fGVufDB8fHx8MTc2MTE2NTI4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "leather wallet"
-    },
-    {
-      "id": "product-wallet-2",
-      "description": "A minimalist black leather cardholder.",
-      "imageUrl": "https://images.unsplash.com/photo-1627685965893-a2420e23d1e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsZWF0aGVyJTIwY2FyZGhvbGRlcnxlbnwwfHx8fDE3NjEyODA0Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "leather cardholder"
-    },
-    {
-      "id": "product-belt-1",
-      "description": "A formal black leather belt with a silver buckle.",
-      "imageUrl": "https://images.unsplash.com/photo-1664286074176-5206ee5dc878?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsZWF0aGVyJTIwYmVsdHxlbnwwfHx8fDE3NjEyMzkwNzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "id": "belt1",
+      "description": "A premium black leather belt with a polished buckle.",
+      "imageUrl": "/belt1.jpeg",
       "imageHint": "leather belt"
     },
     {
-      "id": "product-belt-2",
-      "description": "A casual tan leather belt with a brass buckle.",
-      "imageUrl": "https://images.unsplash.com/photo-1609676873568-6b5a0b95bd91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0YW4lMjBiZWx0fGVufDB8fHx8MTc2MTI4MDQzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "tan belt"
+      "id": "card-holder-with-card",
+      "description": "A black leather card holder with visible credit cards inside.",
+      "imageUrl": "/chw.jpeg",
+      "imageHint": "leather card holder"
     },
     {
-      "id": "product-keychain-1",
-      "description": "A simple and elegant leather keychain.",
-      "imageUrl": "https://images.unsplash.com/photo-1619892203894-b8c313da1af2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxsZWF0aGVyJTIwa2V5Y2hhaW58ZW58MHx8fHwxNzYxMjgwNDM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "leather keychain"
+      "id": "card-holder-without-card",
+      "description": "A sleek black leather card holder without cards.",
+      "imageUrl": "/ch.jpeg",
+      "imageHint": "minimalist card holder"
     },
     {
-      "id": "product-accessory-1",
-      "description": "A leather valet tray for organizing everyday essentials.",
-      "imageUrl": "https://images.unsplash.com/photo-1711288513179-4f7b052fee14?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx2YWxldCUyMHRyYXl8ZW58MHx8fHwxNzYxMjgwNDM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "valet tray"
+      "id": "wallet-1-close",
+      "description": "A tan leather wallet closed and placed on a wooden surface.",
+      "imageUrl": "/wallet-4.png",
+      "imageHint": "leather wallet"
     },
     {
-      "id": "about-us",
-      "description": "Portrait of the founder in a workshop.",
-      "imageUrl": "/art1.png",
-      "imageHint": "craftsman portrait"
+      "id": "wallet-1-open",
+      "description": "An open tan leather wallet showing its compartments.",
+      "imageUrl": "/wallet-4open.png",
+      "imageHint": "open leather wallet"
     },
     {
-      "id": "contact-us",
-      "description": "A vintage telephone on a wooden desk.",
-      "imageUrl": "https://images.unsplash.com/photo-1520923642038-b4259acecbd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx2aW50YWdlJTIwdGVsZXBob25lfGVufDB8fHx8MTc2MTI1OTg0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "vintage telephone"
+      "id": "wallet-2-close",
+      "description": "A light brown leather wallet closed.",
+      "imageUrl": "/w2c.jpeg",
+      "imageHint": "leather wallet"
     },
     {
-      "id": "product-belt-3",
-      "description": "Woven brown leather belt.",
-      "imageUrl": "https://images.unsplash.com/photo-1759395162954-f2191918e647?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b3ZlbiUyMGJlbHR8ZW58MHx8fHwxNzYxMjgwNDM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "woven belt"
+      "id": "wallet-2-open",
+      "description": "A light brown leather wallet opened, showing inner slots.",
+      "imageUrl": "/w2o.jpeg",
+      "imageHint": "bifold leather wallet"
     },
     {
-      "id": "product-wallet-3",
-      "description": "A long leather travel wallet.",
-      "imageUrl": "https://images.unsplash.com/photo-1651051467681-3f8faaf3bb34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0cmF2ZWwlMjB3YWxsZXR8ZW58MHx8fHwxNzYxMjgwNDM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "travel wallet"
+      "id": "wallet-3-with-gift-box",
+      "description": "A brown leather wallet elegantly presented with a gift box.",
+      "imageUrl": "/wallet-3-with-gift-box.jpeg",
+      "imageHint": "gift box wallet"
     },
     {
-      "id": "admin-bg",
-      "description": "Abstract geometric pattern in dark tones",
-      "imageUrl": "https://images.unsplash.com/photo-1640906152676-dace6710d24b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkYXJrJTIwcGF0dGVybnxlbnwwfHx8fDE3NjEyODA0Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "dark pattern"
+      "id": "wallet-4-close",
+      "description": "A green leather wallet closed near a sunlit window.",
+      "imageUrl": "/wallet-4-close.jpeg",
+      "imageHint": "leather wallet"
     },
     {
-      "id": "product-wallet-3",
-      "description": "A long leather travel wallet.",
-      "imageUrl": "https://images.unsplash.com/photo-1651051467681-3f8faaf3bb34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0cmF2ZWwlMjB3YWxsZXR8ZW58MHx8fHwxNzYxMjgwNDM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "travel wallet"
-    },{
-      "id": "art-2",
-      "description": "A long leather travel wallet.",
-      "imageUrl": "/art2.png",
-      "imageHint": "travel wallet"
-    },{
-      "id": "art-1",
-      "description": "A long leather travel wallet.",
-      "imageUrl": "/art1.png",
-      "imageHint": "travel wallet"
+      "id": "wallet-4-open",
+      "description": "An olive green leather wallet opened to show card slots.",
+      "imageUrl": "/wallet-4-open.jpeg",
+      "imageHint": "green wallet"
+    },
+    {
+      "id": "wallet-5-close",
+      "description": "A black leather wallet placed beside sunglasses.",
+      "imageUrl": "/wallet-5-close.jpeg",
+      "imageHint": "black wallet"
+    },
+    {
+      "id": "wallet-5-open",
+      "description": "A black leather wallet opened beside sunglasses.",
+      "imageUrl": "/wallet-5-open.jpeg",
+      "imageHint": "open wallet"
+    },
+    {
+      "id": "wallet-6-close",
+      "description": "A beige leather wallet closed and standing upright.",
+      "imageUrl": "/wallet-6-close.jpeg",
+      "imageHint": "beige wallet"
+    },
+    {
+      "id": "wallet-6-open",
+      "description": "A beige leather wallet open showing compartments.",
+      "imageUrl": "/wallet-6-open.jpeg",
+      "imageHint": "open beige wallet"
+    },
+    {
+      "id": "wallet-1close",
+      "description": "A dark brown leather wallet with embossed logo.",
+      "imageUrl": "/wallet-1close.png",
+      "imageHint": "dark brown wallet"
+    },
+    {
+      "id": "wallet-3close",
+      "description": "A rich brown leather wallet beside a wristwatch.",
+      "imageUrl": "/wallet-3close.png",
+      "imageHint": "luxury leather wallet"
+    },
+    {
+      "id": "wallet-4",
+      "description": "A minimal beige wallet standing against a soft background.",
+      "imageUrl": "/wallet-4.png",
+      "imageHint": "beige wallet"
+    },
+    {
+      "id": "wallet-4open",
+      "description": "A beige wallet open, revealing interior details.",
+      "imageUrl": "/wallet-4open.png",
+      "imageHint": "open wallet"
     }
   ]
 }
