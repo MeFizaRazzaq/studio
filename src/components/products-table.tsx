@@ -12,13 +12,15 @@ interface ProductsTableProps {
   onToggleFeatured: (productId: string, currentStatus: boolean) => void;
   onDelete: (productId: string) => void;
   onEdit: (productId: string) => void;
+  getProductOrderCount: (productId: string) => number;
 }
 
 export default function ProductsTable({ 
   products, 
   onToggleFeatured,
   onDelete,
-  onEdit 
+  onEdit,
+  getProductOrderCount
 }: ProductsTableProps) {
   // Helper function to safely get category as string
   const getCategoryName = (category: any): string => {
@@ -44,6 +46,9 @@ export default function ProductsTable({
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">
                 Stock
+              </th>
+              <th className="px-6 py-3 text-center text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                Sold
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">
                 Featured
@@ -92,6 +97,13 @@ export default function ProductsTable({
                       : 'bg-red-100 text-red-800'
                   }`}>
                     {(product.stock || 0) > 0 ? `${product.stock} in stock` : 'Out of stock'}
+                  </span>
+                </td>
+
+                {/* ORDER COUNT */}
+                <td className="px-6 py-4 whitespace-nowrap text-center">
+                  <span className="inline-flex items-center justify-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                    {getProductOrderCount(product.id)}
                   </span>
                 </td>
 

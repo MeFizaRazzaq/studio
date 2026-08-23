@@ -6,30 +6,79 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Users as UsersIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { db } from "@/firebase/initFirebase";
-import { collection, getDocs, query, orderBy } from "firebase/firestore";
+
+type OrderStats = {
+  totalOrders: number;
+  totalReceived: number;
+  totalPending: number;
+};
+
+type UserWithStats = {
+  id: string;
+  name?: string;
+  email?: string;
+  is_admin?: boolean;
+  orderStats: OrderStats;
+};
 
 export default function UsersManager() {
-  const [users, setUsers] = useState<any[]>([]);
+  const [users, setUsers] = useState<UserWithStats[]>([]);
   const [loading, setLoading] = useState(true);
 
-useEffect(() => {
-  async function fetchUsers() {
-    try {
-      setLoading(true);
-      const res = await fetch("/api/users");
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Failed to fetch users");
-      setUsers(data.users || []);
-    } catch (err) {
-      console.error("❌ Error fetching users from API:", err);
-    } finally {
-      setLoading(false);
+  useEffect(() => {
+    async function fetchUsersAndOrders() {
+      try {
+        setLoading(true);
+        
+        // Fetch users and orders in parallel
+        const [usersRes, ordersRes] = await Promise.all([
+          fetch("/api/users"),
+          fetch("/api/orders")
+        ]);
+        
+        const usersData = await usersRes.json();
+        const ordersData = await ordersRes.json();
+        
+        if (!usersRes.ok) throw new Error(usersData.error || "Failed to fetch users");
+        
+        const usersList = usersData.users || [];
+        const ordersList = ordersData.orders || [];
+        
+        // Calculate order stats per user
+        const usersWithStats: UserWithStats[] = usersList.map((user: any) => {
+          const userOrders = ordersList.filter((order: any) => order.user_id === user.id);
+          
+          const pendingStatuses = ["pending", "processing", "prepared"];
+          const receivedStatuses = ["shipped", "arrived", "delivered"];
+          
+          const totalOrders = userOrders.length;
+          const totalReceived = userOrders
+            .filter((order: any) => receivedStatuses.includes(order.status?.toLowerCase()))
+            .reduce((sum: number, order: any) => sum + (order.total_amount || 0), 0);
+          const totalPending = userOrders
+            .filter((order: any) => pendingStatuses.includes(order.status?.toLowerCase()))
+            .reduce((sum: number, order: any) => sum + (order.total_amount || 0), 0);
+          
+          return {
+            ...user,
+            orderStats: {
+              totalOrders,
+              totalReceived,
+              totalPending
+            }
+          };
+        });
+        
+        setUsers(usersWithStats);
+      } catch (err) {
+        console.error("❌ Error fetching data:", err);
+      } finally {
+        setLoading(false);
+      }
     }
-  }
 
-  fetchUsers();
-}, []);
+    fetchUsersAndOrders();
+  }, []);
 
 
   return (
@@ -57,6 +106,9 @@ useEffect(() => {
                   <TableHead>Customer</TableHead>
                   <TableHead>Email</TableHead>
                   <TableHead>Role</TableHead>
+                  <TableHead className="text-center">Orders</TableHead>
+                  <TableHead className="text-right">Received</TableHead>
+                  <TableHead className="text-right">Pending</TableHead>
                 </TableRow>
               </TableHeader>
 
@@ -82,12 +134,21 @@ useEffect(() => {
                             {isAdmin ? "Admin" : "User"}
                           </Badge>
                         </TableCell>
+                        <TableCell className="text-center">
+                          <Badge variant="outline">{user.orderStats.totalOrders}</Badge>
+                        </TableCell>
+                        <TableCell className="text-right text-green-600 font-medium">
+                          PKR {user.orderStats.totalReceived.toLocaleString()}
+                        </TableCell>
+                        <TableCell className="text-right text-amber-600 font-medium">
+                          PKR {user.orderStats.totalPending.toLocaleString()}
+                        </TableCell>
                       </TableRow>
                     );
                   })
                 ) : (
                   <TableRow>
-                    <TableCell colSpan={3} className="text-center text-muted-foreground">
+                    <TableCell colSpan={6} className="text-center text-muted-foreground">
                       No users found.
                     </TableCell>
                   </TableRow>

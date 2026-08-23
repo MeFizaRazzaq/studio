@@ -9,28 +9,70 @@ import { useRouter } from "next/navigation";
 
 export default function ProductsManager() {
   const [products, setProducts] = useState<Product[]>([]);
+  const [orders, setOrders] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
   useEffect(() => {
-    fetchProducts();
+    fetchData();
+
+    // Refresh data when window gains focus
+    const handleFocus = () => {
+      fetchData();
+    };
+
+    window.addEventListener('focus', handleFocus);
+    return () => window.removeEventListener('focus', handleFocus);
   }, []);
 
-  const fetchProducts = async () => {
+  const fetchData = async () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("/api/products");
-      if (!res.ok) throw new Error("Failed to fetch products");
-      const data = await res.json();
-      setProducts(data);
+      const [productsRes, ordersRes] = await Promise.all([
+        fetch("/api/products"),
+        fetch("/api/orders")
+      ]);
+      
+      if (!productsRes.ok) throw new Error("Failed to fetch products");
+      
+      const productsData = await productsRes.json();
+      const ordersData = await ordersRes.json();
+      
+      console.log("📦 Products data:", productsData);
+      console.log("🛒 Orders data:", ordersData);
+      console.log("📋 Sample order items:", ordersData.orders?.[0]?.items);
+      
+      setProducts(productsData);
+      setOrders(ordersData.orders || []);
     } catch (err) {
-      console.error("Error fetching products:", err);
+      console.error("Error fetching data:", err);
       setError("Failed to load products");
     } finally {
       setLoading(false);
     }
+  };
+
+  const fetchProducts = async () => {
+    await fetchData();
+  };
+
+  // Calculate order count and total quantity for each product
+  const getProductOrderCount = (productId: string): number => {
+    let totalQuantity = 0;
+    
+    orders.forEach(order => {
+      if (order.items && Array.isArray(order.items)) {
+        order.items.forEach((item: any) => {
+          if (item.product_id  === productId) {
+            totalQuantity += item.quantity || 0;
+          }
+        });
+      }
+    });
+    
+    return totalQuantity;
   };
 
   const handleAddProduct = async (productData: any) => {
@@ -138,6 +180,7 @@ export default function ProductsManager() {
           onToggleFeatured={handleToggleFeatured}
           onDelete={handleDeleteProduct}
           onEdit={handleEditProduct} // <-- Add this prop for edit navigation
+          getProductOrderCount={getProductOrderCount}
         />
       )}
     </div>

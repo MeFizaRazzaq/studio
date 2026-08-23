@@ -52,3 +52,27 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }
+
+// ---------------- UPDATE ORDER STATUS ----------------
+export async function PATCH(req: Request) {
+  try {
+    const { orderId, status } = await req.json();
+
+    if (!orderId || !status) {
+      return NextResponse.json(
+        { error: "Order ID and status are required" },
+        { status: 400 }
+      );
+    }
+
+    await adminDb.collection("orders").doc(orderId).update({
+      status,
+      updated_at: new Date().toISOString(),
+    });
+
+    return NextResponse.json({ success: true, message: "Order status updated" });
+  } catch (err: any) {
+    console.error("PATCH /orders error:", err);
+    return NextResponse.json({ error: err.message }, { status: 500 });
+  }
+}

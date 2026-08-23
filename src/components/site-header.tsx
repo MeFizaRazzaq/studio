@@ -7,6 +7,7 @@ import { CartSheet } from "./cart-sheet";
 import { Logo } from "./logo";
 import { useAuth } from "@/context/AuthContext";
 import { AuthModal } from "./auth-modal";
+import SearchModal from "./search-modal";
 import { signOut } from "firebase/auth";
 import { auth } from "@/firebase/initFirebase";
 import { useState } from "react";
@@ -22,6 +23,7 @@ const navLinks = [
 export function SiteHeader() {
   const { user } = useAuth();
   const [showAuthModal, setShowAuthModal] = useState(false);
+  const [showSearchModal, setShowSearchModal] = useState(false);
 
 const handleProfileClick = async () => {
   if (!user) {
@@ -60,7 +62,7 @@ const handleProfileClick = async () => {
 
           {/* Right: Icons */}
           <div className="flex items-center space-x-2 ml-auto">
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" onClick={() => setShowSearchModal(true)}>
               <Search className="h-5 w-5" />
               <span className="sr-only">Search</span>
             </Button>
@@ -81,6 +83,9 @@ const handleProfileClick = async () => {
           </div>
         </div>
       </header>
+
+      {/* Search Modal */}
+      <SearchModal open={showSearchModal} onOpenChange={setShowSearchModal} />
 
       {/* Auth Modal in Portal */}
       {showAuthModal &&

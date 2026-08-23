@@ -46,11 +46,8 @@ export function CartSheet({ children }: { children: React.ReactNode }) {
                   <span>Subtotal</span>
                   <span>${totalPrice.toFixed(2)}</span>
                 </div>
-                <Button size="lg" className="w-full" asChild>
-                  <Link href="/checkout">Proceed to Checkout</Link>
-                </Button>
                 <Button variant="outline" className="w-full" asChild>
-                  <Link href="/cart">View Cart</Link>
+                  <Link href="/checkout">View Cart</Link>
                 </Button>
               </div>
             </SheetFooter>

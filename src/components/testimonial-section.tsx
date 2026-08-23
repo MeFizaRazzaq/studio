@@ -247,13 +247,12 @@ export function TestimonialsSection() {
   const totalCustomers = 500;
   const sectionRef = useRef(null);
 
-  const randomPositions = useMemo(() =>
-  reviewsData.map(() => ({
-    dist: 28 + Math.random() * 22,
-    size: 45 + Math.random() * 35,
-    angle: Math.random() * 2 * Math.PI,
-  }))
-, []);
+  const [mounted, setMounted] = useState(false);
+const [randomPositions, setRandomPositions] = useState<
+  { dist: number; size: number; angle: number }[]
+>([]);
+
+
 
 
   useEffect(() => {
@@ -296,6 +295,17 @@ export function TestimonialsSection() {
       clearInterval(timer);
     };
   }, []);
+useEffect(() => {
+  setMounted(true);
+
+  const positions = reviewsData.map(() => ({
+    dist: 28 + Math.random() * 22,
+    size: 45 + Math.random() * 35,
+    angle: Math.random() * 2 * Math.PI,
+  }));
+
+  setRandomPositions(positions);
+}, []);
 
   return (
     <section ref={sectionRef} className="py-20 bg-background">
@@ -313,9 +323,9 @@ export function TestimonialsSection() {
         </p>
 
         {/* ✅ Floating Icons */}
-<div className="relative h-[350px] md:h-[420px] flex items-center justify-center mb-16 overflow-visible">
+{mounted && randomPositions.length === reviewsData.length && (<div className="relative h-[350px] md:h-[420px] flex items-center justify-center mb-16 overflow-visible">
   {reviewsData.map((rev, index) => {
-    const { dist, size, angle } = randomPositions[index];
+      const { dist, size, angle } = randomPositions[index];
 
     const x = 50 + dist * Math.cos(angle);
     const y = 50 + dist * Math.sin(angle);
@@ -353,7 +363,7 @@ export function TestimonialsSection() {
       </button>
     );
   })}
-</div>
+</div>)}
 
   {/* Center Review Card with Quote Marks */}
 <div className="relative max-w-xl mx-auto bg-card p-10 shadow-xl rounded-2xl border border-primary/10">
